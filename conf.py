@@ -19,9 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = '会务系统'
-copyright = '2019, 软创互联'
-author = '软创互联'
+project = u'会务系统'
+copyright = u'2019, 软创互联'
+author = u'软创互联'
 
 # The short X.Y version
 version = '2.0'
@@ -128,8 +128,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sphinx.tex', '会务系统 Documentation',
-     '软创互联', 'manual'),
+    (master_doc, 'sphinx.tex', u'会务系统文档',
+     u'软创互联', 'manual'),
 ]
 
 
@@ -138,7 +138,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sphinx', '会务系统 Documentation',
+    (master_doc, 'sphinx', u'会务系统文档',
      [author], 1)
 ]
 
@@ -149,7 +149,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'sphinx', '会务系统 Documentation',
+    (master_doc, 'sphinx', u'会务系统文档',
      author, 'sphinx', 'One line description of project.',
      'Miscellaneous'),
 ]
