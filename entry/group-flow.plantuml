@@ -1,0 +1,23 @@
+@startuml
+skinparam componentStyle uml2
+
+|招生组|
+start
+:联系机构\n对接人;
+:登记机构信息;
+:授权机构报名;
+
+
+while (是否合规?) is (未通过)
+	|#AntiqueWhite|机构|
+	:线上批量填报;
+	|招生组|
+	:审核;
+endwhile (通过)
+
+|招生组|
+:报名学员\n登记入库;
+
+stop
+
+@enduml
