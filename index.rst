@@ -25,6 +25,7 @@
 
     startup/index
     entry/index
+    checkin/index
 
 
 版权声明

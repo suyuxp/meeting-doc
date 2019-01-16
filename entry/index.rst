@@ -9,3 +9,4 @@
 
 	01_user
 	02_group
+	sms

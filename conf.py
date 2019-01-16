@@ -19,14 +19,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'会务系统'
-copyright = u'2019, 软创互联'
-author = u'软创互联'
+project = u'学习会报名'
+copyright = u'2019, suyu'
+author = u'suyu'
 
 # The short X.Y version
-version = '2.0'
+version = u'2.0'
 # The full version, including alpha/beta/rc tags
-release = 'alpha'
+release = u'alpha'
 
 
 # -- General configuration ---------------------------------------------------
@@ -39,6 +39,7 @@ release = 'alpha'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.graphviz'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,12 +59,12 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'zh_CN'
+language = u'zh_CN'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
@@ -101,7 +102,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'sphinxdoc'
+htmlhelp_basename = 'meeting20doc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -128,8 +129,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sphinx.tex', u'会务系统文档',
-     u'软创互联', 'manual'),
+    (master_doc, 'meeting20.tex', u'meeting20 Documentation',
+     u'suyu', 'manual'),
 ]
 
 
@@ -138,7 +139,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sphinx', u'会务系统文档',
+    (master_doc, 'meeting20', u'meeting20 Documentation',
      [author], 1)
 ]
 
@@ -149,8 +150,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'sphinx', u'会务系统文档',
-     author, 'sphinx', 'One line description of project.',
+    (master_doc, 'meeting20', u'meeting20 Documentation',
+     author, 'meeting20', 'One line description of project.',
      'Miscellaneous'),
 ]
 
@@ -171,3 +172,17 @@ epub_title = project
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
+
+
+# -- Graphviz --------------------------------------------------------------
+
+graphviz_dot = 'dot'
+graphviz_dot_args = ['-Gfontname=WenQuanYi Micro Hei Mono',
+                     '-Gfontsize=10.0',
+                     '-Nfontname=WenQuanYi Micro Hei Mono',
+                     '-Nfontsize=10.0',
+                     '-Efontname=WenQuanYi Micro Hei Mono',
+                     '-Efontsize=9.0']
+graphviz_output_format = 'svg'
+
+
