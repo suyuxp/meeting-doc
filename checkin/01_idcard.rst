@@ -1,8 +1,3 @@
-.. _checkin_idcard:
-
-身份证签到
-=====================
-
 
 描述
 -------------
@@ -108,38 +103,38 @@
 
 ::
 
-	POST https://meeting.wangyangming.org.cn/meeting/api/login
+    POST https://meeting.wangyangming.org.cn/meeting/api/login
 
 
 传入数据格式为 `JSON`
 
 .. code:: json
 
-	{
-	  "code": "223895"
-	}
+    {
+      "code": "223895"
+    }
 
 
 返回数据格式为 `JSON`
 
 .. code:: json
 
-	{
-	  "id": 2,
-	  "name": "大学生学习会",
-	  "point": "筑梦空间",
-	  "token": "2289-3365-312345"
-	}
+    {
+      "id": 2,
+      "name": "大学生学习会",
+      "point": "筑梦空间",
+      "token": "2289-3365-312345"
+    }
 
 
 查找失败返回
-	
+    
 .. code:: json
-		
-	{
-	  "result": "fail",
-	  "reason": "没有匹配的签到点"
-	}
+        
+    {
+      "result": "fail",
+      "reason": "没有匹配的签到点"
+    }
 
 
 
@@ -148,19 +143,19 @@
 
 ::
 
-	POST https://meeting.wangyangming.org.cn/meeting/api/idcards
+    POST https://meeting.wangyangming.org.cn/meeting/api/idcards
 
 传入数据格式 `JSON`
 
 
 .. code:: json
 
-	{
-	  "meetingId": 2,
-	  "idcard": "5101**19******21*X",
-	  "name": "苏**",
-	  "token": "2289-3365-312345"
-	}
+    {
+      "meetingId": 2,
+      "idcard": "5101**19******21*X",
+      "name": "苏**",
+      "token": "2289-3365-312345"
+    }
 
 **注意：身份证号最后一位如果是 x，则转为大写**
 
@@ -168,25 +163,25 @@
 返回数据格式为 `JSON`
 
 当查找成功时:
-	
+    
 .. code:: json
 
-	{
-		"id": 20537,
-		"idcard": "5101**19******21*X",
-		"name": "苏**"
-		"organ": "成都软创互联****公司",
-		"mobile": "189****3365"
-	}
+    {
+        "id": 20537,
+        "idcard": "5101**19******21*X",
+        "name": "苏**"
+        "organ": "成都软创互联****公司",
+        "mobile": "189****3365"
+    }
 
 查找失败时:
-	
+    
 .. code:: json
-	
-	{
-	  "result": "fail",
-	  "reason": "没有匹配的身份证号码，也没有匹配的姓名"
-	}
+    
+    {
+      "result": "fail",
+      "reason": "没有匹配的身份证号码，也没有匹配的姓名"
+    }
 
 其中错误原因有以下几种情况：
 
@@ -201,7 +196,7 @@
 
 ::
 
-	GET https://meeting.wangyangming.org.cn/meeting/api/records?token=2289-3365-312345
+    GET https://meeting.wangyangming.org.cn/meeting/api/records?token=2289-3365-312345
 
 
 返回数据格式为`JSON`
@@ -210,25 +205,25 @@
 
 .. code:: json
 
-	[
-	  {
-	    "id": 20537,
-	    "idcard": "5101**19******21*X",
-	    "name": "苏**",
-	    "organ": "成都软创互联****公司",
-	    "mobile": "189****3365"，
-	    "count": 1
-	  }
-	]
+    [
+      {
+        "id": 20537,
+        "idcard": "5101**19******21*X",
+        "name": "苏**",
+        "organ": "成都软创互联****公司",
+        "mobile": "189****3365",
+        "count": 1
+      }
+    ]
 
 查找失败时:
-	
+    
 .. code:: json
 
-	{
-	  "result": "fail",
-	  "reason": "非法的 Token"
-	}
+    {
+      "result": "fail",
+      "reason": "非法的 Token"
+    }
 
 其中错误原因有以下几种情况：
 
@@ -239,14 +234,45 @@
 用例清单
 ------------------------
 
-选择签到会议
-^^^^^^^^^^^^^^^^^^^^^^
 
 身份证签到
 ^^^^^^^^^^^^^^^^^^^^^^
 
+**基本流程**
+
+#. 读取身份证信息
+
+    - 未携带身份证或者无身份证者
+        - 手工录入证件号码与真实姓名
+
+#. 确认学员合法性
+
+    - 确认失败的学员
+        - 请到咨询处确认
+        - 重新签到
+
+#. 打印胸牌
+#. 交付胸牌
+
+**优先级**: 高
+
+**执行人**: 会务人员
+
+
+
 补打胸牌
 ^^^^^^^^^^^^^^^^^^^^^^
+
+**基本流程**
+
+#. 输入身份证号
+#. 确认已经签到
+#. 选择补打胸牌
+#. 交付胸牌
+
+**优先级**: 中
+
+**执行者**: 会务人员
 
 
 

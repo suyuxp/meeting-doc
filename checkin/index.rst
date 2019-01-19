@@ -1,10 +1,17 @@
+.. _checkin:
+
 签到部分
 ===========
 
-这一部分主要描述签到过程中的操作内容。
+
+.. important::
+
+    从2019年起，学习会签到只保留身份证签到一种形式。
+
 
 .. toctree::
-	:maxdepth: 2
-	:numbered: 1
+    :maxdepth: 2
+    :numbered: 1
 
-	01_idcard
+    01_idcard
+    

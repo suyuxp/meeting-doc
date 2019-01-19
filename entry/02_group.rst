@@ -32,7 +32,47 @@
 主流程图
 ^^^^^^^^^^^^
 
-.. image:: group-flow.png
+.. graphviz::
+
+    digraph flow {
+        margin = 0.5;
+        bgcolor = "transparent";
+        rankdir = TB;
+        size = "5,8";
+
+        node [shape="record"];
+        edge [style="dashed"];
+
+        a [label="{开始}", style="filled", fillcolor="chartreuse", color="black"];
+        b [label="{登记机构信息}"];
+
+        {
+            ranke = "same";
+            c [label="{线上批量填报}"];
+        }
+
+        d [label="审核通过否?", shape="diamond"];
+        f [label="{整体入库}"];
+        g [label="{结束}", style="filled", fillcolor="chartreuse"];
+
+        node [shape="point", width=0, height=0];
+
+        a -> b [label="招生组联系机构对接人"];
+        b -> c -> d;
+        d -> f [label="通过"];
+        f -> g;
+
+        {
+            rank = "same";
+            e;
+            edge [fontcolor="red", color="red", arrowhead="none"];
+            d -> e [label="未通过"];
+            e -> s1;
+        }
+
+        s1 -> c [color="red"];
+    }
+
 
 
 用例清单
