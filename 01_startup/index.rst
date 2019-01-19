@@ -5,6 +5,6 @@
 
 .. toctree::
 	:maxdepth: 2
-	:numbered: 2
+	:numbered: 3
 
 	01_create

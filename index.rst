@@ -23,9 +23,14 @@
     :maxdepth: 2
     :glob:
 
-    startup/index
-    entry/index
-    checkin/index
+    00_prefix/index
+    01_startup/index
+    02_entry/index
+    03_hotel/index
+    04_checkin/index
+    05_study/index
+
+    08_base/index
 
 
 版权声明
