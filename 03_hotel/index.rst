@@ -7,3 +7,5 @@
     :maxdepth: 2
     :numbered: 3
 
+    01_register
+    
