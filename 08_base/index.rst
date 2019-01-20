@@ -9,3 +9,9 @@
 
     01_sms
     02_polyprop
+    03_log
+
+.. 04_workflow
+.. 05_authenticate
+.. 06_authorize
+.. 07_attachment
