@@ -51,3 +51,8 @@
 -----------------------
 
 #. :ref:`startup`
+#. :ref:`entry`
+#. :ref:`hotel`
+#. :ref:`checkin`
+#. :ref:`study`
+#. :ref:`base`
